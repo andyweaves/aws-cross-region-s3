@@ -10,8 +10,8 @@
 2. Update [terraform.tfvars](terraform.tfvars)
 3. Setup Terraform to use your AWS credentials
 4. Run Terraform init
-5. Run Terraform plan
-6. Run Terraform apply
+5. Run Terraform plan, entering your Databricks account credentials
+6. Run Terraform apply, entering your Databricks account credentials
 
 ## Test Steps
 
