@@ -4,4 +4,23 @@
 
 ![image](https://github.com/andyweaves/aws-cross-region-s3/assets/43955924/5a0b5388-4756-49c2-ba84-6c1e6b010603)
 
+## Deployment Steps
 
+1. Install Terraform
+2. Update [terraform.tfvars](terraform.tfvars)
+3. Setup Terraform to use your AWS credentials
+4. Run Terraform init
+5. Run Terraform plan
+6. Run Terraform apply
+
+## Test Steps
+
+1. Login to your new Databricks workspace
+2. Create a new cluster (recommended to use the latest DBR version). Ensure that you have selected the instance profile created by Terraform
+3. Navigate to the notebook created by Terraform (in Workspace > Shared > test_notebook.py)
+4. Update the s3_bucket_name and region_name variables
+5. Run the notebook
+
+## Limitations
+
+* Most of the above 
