@@ -23,4 +23,4 @@
 
 ## Limitations
 
-* Most of the above 
+* Most of the above is based on DNS overrides and Spark configuration that may not be compatible with all Databricks features. Ideally AWS would allow for managed private DNS for AWS S3, including from other regions.
