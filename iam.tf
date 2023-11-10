@@ -131,6 +131,16 @@ resource "aws_iam_role_policy" "s3_instance-profile" {
   policy = jsonencode({
         "Version": "2012-10-17",
         "Statement": [
+          {
+                "Sid": "GrantCatalogAccessToGlue",
+                "Effect": "Allow",
+                "Action": [
+                    "glue:*"
+                ],
+                "Resource": [
+                    "*"
+                ]
+            },
             {
             "Effect": "Allow",
             "Action": [

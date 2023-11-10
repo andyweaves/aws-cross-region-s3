@@ -33,7 +33,15 @@ module "vpc_endpoints" {
       tags = {
         Name = "${local.prefix}-kinesis-vpc-endpoint"
       }
-    }
+    },
+    glue = {
+      service             = "glue"
+      private_dns_enabled = true
+      subnet_ids          = aws_subnet.private[*].id
+      tags = {
+        Name = "${local.prefix}-glue-vpc-endpoint"
+      }
+    },
   }
 }
 

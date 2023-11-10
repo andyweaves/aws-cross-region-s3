@@ -66,3 +66,19 @@ resource "databricks_notebook" "test_notebook" {
   source = "resources/test_notebook.py"
   path   = "/Shared/test_notebook.py"
 }
+
+data "databricks_group" "admins" {
+  provider = databricks.created_workspace
+  display_name = "admins"
+}
+
+resource "databricks_user" "me" {
+  provider = databricks.created_workspace
+  user_name = var.username
+}
+
+resource "databricks_group_member" "admins" {
+  provider = databricks.created_workspace
+  group_id  = data.databricks_group.admins.id
+  member_id = databricks_user.me.id
+}
