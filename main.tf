@@ -69,16 +69,19 @@ resource "databricks_notebook" "test_notebook" {
 
 data "databricks_group" "admins" {
   provider = databricks.created_workspace
+  depends_on = [module.databricks_mws_workspace]
   display_name = "admins"
 }
 
 resource "databricks_user" "me" {
   provider = databricks.created_workspace
+  depends_on = [module.databricks_mws_workspace]
   user_name = var.username
 }
 
 resource "databricks_group_member" "admins" {
   provider = databricks.created_workspace
+  depends_on = [module.databricks_mws_workspace]
   group_id  = data.databricks_group.admins.id
   member_id = databricks_user.me.id
 }
