@@ -23,6 +23,15 @@
 4. Update the s3_bucket_name and region_name variables
 5. Run the notebook
 
+## Additional Configuration
+
+The following 
+```
+spark.hadoop.fs.s3a.bucket.<s3-bucket>.endpoint https://s3.<region>.amazonaws.com
+spark.hadoop.fs.s3a.endpoint.region <region>
+spark.databricks.hive.metastore.glueCatalog.enabled true
+```
+
 ## Limitations
 
 * Most of the above is based on DNS overrides and Spark configuration that may not be compatible with all Databricks features. Ideally AWS would allow for automatic, fully managed private DNS for AWS S3, including from other regions.
