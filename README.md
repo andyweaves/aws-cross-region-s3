@@ -25,7 +25,7 @@
 
 ## Additional Configuration
 
-The following 
+The following configuration should be added to any clusters and SQL warehouses. These could be also be incorporated into cluster policies.
 ```
 spark.hadoop.fs.s3a.bucket.<s3-bucket>.endpoint https://s3.<region>.amazonaws.com
 spark.hadoop.fs.s3a.endpoint.region <region>
